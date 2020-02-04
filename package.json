@@ -4,8 +4,18 @@
   "description": "Rectuitment task",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
+    "watch-css": "onchange scss/style.scss -- npm run build-css",
+    "prefix-css": "autoprefixer-cli -o css/style.prefixed.css css/style.css",
+    "watch-prefix": "onchange -d 100 css/style.css -- npm run prefix-css",
+    "watch": "parallelshell \"npm run watch-css\" \"npm run watch-prefix\""
   },
   "author": "Ariel Biernacki",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "node-sass": "^4.13.1",
+    "onchange": "^6.1.0",
+    "parallelshell": "3.0.1"
+  }
 }
