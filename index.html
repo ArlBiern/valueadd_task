@@ -7,10 +7,90 @@
     <meta name="description" content="ValueAdd recruitment task" />
     <meta name="author" content="Ariel Biernacki" />
     <title>House of Angular</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="css/style.prefixed.css" />
   </head>
 
   <body>
-    <h1>To jest nowa strona</h1>
+    <header class="header">
+      <nav class="header__nav nav">
+        <img
+          src="../img/Logo-black.png"
+          alt="House of Angular logo"
+          class="nav__logo"
+        />
+        <input id="hamburger" type="checkbox" class="nav__input" />
+        <label for="hamburger" class="nav__label">
+          <span class="nav__span"></span>
+          <span class="nav__span"></span>
+          <span class="nav__span"></span>
+        </label>
+        <ul class="nav__list">
+          <li class="nav__item">Strona główna</li>
+          <li class="nav__item">Baza wiedzy</li>
+          <li class="nav__item">Open source</li>
+          <li class="nav__item">Blog</li>
+          <li class="nav__item">Hire Us</li>
+        </ul>
+        <button class="nav__login">Login</button>
+      </nav>
+      <section class="header__banner banner">
+        <div class="banner__cnt">
+          <h2 class="banner__info">
+            Angular House is part of ValueAdd company
+          </h2>
+          <p class="banner__details">
+            Over 92% of computers are infected with Adware and spyware. Such
+            software is rarely accompanied by uninstall utility and even when it
+            is it almost always leaves broken Windows Registry keys behind it.
+          </p>
+          <button class="banner__contact">Write us</button>
+        </div>
+      </section>
+    </header>
+    <section class="passion">
+      <h2>Our Passion</h2>
+      <div class="passsion__content">
+        <div class="passion_info">
+          <img
+            src="./img/icon_development.png"
+            alt="Icon which presents program user interface"
+            classs="passsion_img"
+          />
+          <h4 class="passsion__title">Development</h4>
+          <p class="passsion__details">
+            Living in today's metropolitan world of cellular phones, mobile
+            computers
+          </p>
+        </div>
+        <div class="passion_info">
+          <img
+            src="./img/icon_audyt.png"
+            alt="Icon which presents program user interface"
+            classs="passsion_img"
+          />
+          <h4 class="passsion__title">Audyt</h4>
+          <p class="passsion__details">
+            It is a good idea to think of your PC as an office. It stores files,
+            programs, pictures.
+          </p>
+        </div>
+        <div class="passion_info">
+          <img
+            src="./img/icon_consulting.png"
+            alt="Icon which presents program user interface"
+            classs="passsion_img"
+          />
+          <h4 class="passsion__title">Consulting</h4>
+          <p class="passsion__details">
+            Last month, my wife, Ann Doe, took me to Las Vegas because she had
+            to go.
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

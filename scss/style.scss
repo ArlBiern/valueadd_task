@@ -1,3 +1,284 @@
+// === VARIABLES === //
+$mainFont: 'Roboto',
+sans-serif;
+$main-dark-color: #152743;
+$main-light-color: #fff;
+$underline-color: #6ba5c6;
+$contrast-color: #fc3b56;
+$break-large: 1200px;
+$break-medium: 768px;
+$break-small: 360px;
+
+// === MIXIN === //
+@mixin button-style {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: $contrast-color;
+  color: $main-light-color;
+  font-size: 1em;
+  border-radius: 5px;
+  border-style: none;
+}
+
+@mixin centering-cnt {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+
+  @media screen and (max-width: $break-large) {
+    margin-left: 20px;
+  }
+}
+
+// === GENERAL === //
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  background-color: #ccc;
+  max-width: 1920px;
+  min-width: 320px;
+  font-family: $mainFont;
+  margin: 0 auto;
+}
+
+// === HEADER === //
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+
+  @media screen and (max-width: $break-medium) {
+    font-size: 0.75rem;
+  }
+
+  &__nav {
+    @include centering-cnt;
+  }
+
+  .nav {
+    height: 86px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $main-dark-color;
+    font-size: 1em;
+    font-weight: 700;
+
+    @media screen and (max-width: $break-large) {
+      width: 90%;
+    }
+
+    &__input,
+    &__label {
+      display: none;
+    }
+
+    &__input {
+      @media screen and (max-width: $break-large) {
+        &:checked+.nav__label {
+          .nav__span {
+            opacity: 0;
+            top: 50%;
+          }
+
+          .nav__span:first-child {
+            opacity: 1;
+            transform: rotate(45deg);
+          }
+
+          .nav__span:last-child {
+            opacity: 1;
+            transform: rotate(-45deg);
+          }
+        }
+
+        &:checked~.nav__list {
+          display: block;
+
+          @media screen and (max-width: $break-medium) {
+            background-color: $main-light-color;
+            width: 100vw;
+            position: absolute;
+            padding-bottom: 0.5em;
+            top: 70px;
+            left: 0px;
+            display: flex;
+            justify-content: space-evenly;
+          }
+        }
+
+        &:checked~.nav__login {
+          display: block;
+        }
+      }
+    }
+
+    &__label {
+      @media screen and (max-width: $break-large) {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        height: 26px;
+        width: 36px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__span {
+      position: absolute;
+      width: 36px;
+      height: 2px;
+      top: 50%;
+      left: 0%;
+      background-color: $main-dark-color;
+      border-radius: 2px;
+      transition: 0.3s;
+
+      &:first-child {
+        top: 0px;
+      }
+
+      &:last-child {
+        top: 24px;
+      }
+    }
+
+    &__logo {
+      width: 116px;
+      height: 50px;
+    }
+
+    &__list {
+      list-style: none;
+      display: flex;
+
+      @media screen and (max-width: $break-large) {
+        display: none;
+      }
+    }
+
+    &__item {
+      display: inline-block;
+      height: 45px;
+      line-height: 45px;
+      margin-left: 55px;
+      cursor: pointer;
+
+      &:hover {
+        border-bottom: 3px solid $underline-color;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      @media screen and (max-width: $break-large) {
+        margin-left: 0.25vw;
+      }
+    }
+
+    &__login {
+      @include button-style;
+
+      &:focus {
+        outline: 0;
+      }
+
+      @media screen and (max-width: $break-large) {
+        display: none;
+      }
+
+      @media screen and (max-width: $break-medium) {
+        position: relative;
+        right: 15%;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &__banner {
+    background-image: url('../img/desktop_banner_photo.png');
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+
+    @media screen and (max-width: $break-large) {
+      background-image: url('../img/tablet_banner_photo.png');
+      height: 480px;
+    }
+
+    @media screen and (max-width: $break-medium) {
+      background-image: url('../img/phone_banner_photo.png');
+      height: 300px;
+    }
+  }
+
+  .banner {
+    &__cnt {
+      @include centering-cnt;
+      height: 100%;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: $main-light-color;
+    }
+
+    &__info {
+      font-size: 2em;
+      margin-bottom: 1.25em;
+      font-weight: 400;
+
+      @media screen and (max-width: $break-medium) {
+        margin-bottom: 0.5em;
+      }
+    }
+
+    &__details {
+      display: inline-block;
+      font-size: 0.9em;
+      font-weight: 300;
+      line-height: 1.5em;
+      width: 785px;
+      margin-bottom: 1.25em;
+
+      @media screen and (max-width: $break-large) {
+        width: 80%;
+      }
+
+      @media screen and (max-width: $break-medium) {
+        width: 90%;
+        margin-bottom: 0.75em;
+        line-height: 1.25em;
+      }
+    }
+
+    &__contact {
+      @include button-style;
+      margin-bottom: 42px;
+
+      &:focus {
+        outline: 0;
+      }
+
+      @media screen and (max-width: $break-medium) {
+        margin-bottom: 0.75em;
+      }
+    }
+  }
 }
