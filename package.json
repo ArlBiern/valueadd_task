@@ -7,7 +7,7 @@
     "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
     "watch-css": "onchange scss/style.scss -- npm run build-css",
     "prefix-css": "autoprefixer-cli -o css/style.prefixed.css css/style.css",
-    "watch-prefix": "onchange -d 100 css/style.css -- npm run prefix-css",
+    "watch-prefix": "onchange -d 500 css/style.css -- npm run prefix-css",
     "watch": "parallelshell \"npm run watch-css\" \"npm run watch-prefix\""
   },
   "author": "Ariel Biernacki",

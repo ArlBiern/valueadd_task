@@ -1,13 +1,13 @@
 // === VARIABLES === //
-$mainFont: 'Roboto',
-sans-serif;
+$mainFont: 'Roboto', sans-serif;
 $main-dark-color: #152743;
-$mian-medium-color: #d4dbe9;
+$main-medium-color: #d4dbe9;
 $main-light-color: #fff;
 $checkbox-color: #296ad0;
+$footer-text-color: #8d9fc2;
 $underline-color: #6ba5c6;
 $contrast-color: #fc3b56;
-$break-large: 1200px;
+$break-large: 1220px;
 $break-medium: 768px;
 $break-small: 360px;
 
@@ -41,7 +41,7 @@ $break-small: 360px;
   font-size: 1.75em;
 
   &:after {
-    content: "";
+    content: '';
     width: 60px;
     height: 3px;
     background: $contrast-color;
@@ -103,7 +103,7 @@ body {
 
     &__input {
       @media screen and (max-width: $break-large) {
-        &:checked+.nav__label {
+        &:checked + .nav__label {
           .nav__span {
             opacity: 0;
             top: 50%;
@@ -120,7 +120,7 @@ body {
           }
         }
 
-        &:checked~.nav__list {
+        &:checked ~ .nav__list {
           display: block;
 
           @media screen and (max-width: $break-medium) {
@@ -135,7 +135,7 @@ body {
           }
         }
 
-        &:checked~.nav__login {
+        &:checked ~ .nav__login {
           display: block;
         }
       }
@@ -375,17 +375,19 @@ body {
   }
 
   &__cnt {
-    border: 1px solid $mian-medium-color;
+    border: 1px solid $main-medium-color;
     width: 780px;
     padding: 45px;
 
     @media screen and (max-width: $break-large) {
-      width: 65%;
+      width: 80%;
+      margin-bottom: 100px;
     }
 
     @media screen and (max-width: $break-medium) {
       width: 95%;
       padding: 25px;
+      margin-bottom: 60px;
     }
   }
 
@@ -414,7 +416,7 @@ body {
   &__input {
     padding: 1em;
     margin-bottom: 2em;
-    border: 1px solid $mian-medium-color;
+    border: 1px solid $main-medium-color;
 
     &:nth-child(10) {
       resize: none;
@@ -430,7 +432,7 @@ body {
   &__permission-input {
     display: none;
 
-    &:checked~label>span:before {
+    &:checked ~ label > span:before {
       content: '';
       display: inline-block;
       width: 10px;
@@ -441,9 +443,7 @@ body {
       top: 15%;
       left: 50%;
       transform: translateY(-50%) translateX(-50%);
-
     }
-
   }
 
   &__permission-span {
@@ -451,7 +451,7 @@ body {
     width: 18px;
     height: 18px;
     border-radius: 4px;
-    border: 2px solid $mian-medium-color;
+    border: 2px solid $main-medium-color;
     position: relative;
     top: 4px;
   }
@@ -466,5 +466,126 @@ body {
     @include button-style;
     align-self: flex-end;
     margin-top: 3em;
+  }
+}
+
+// === TRUSTED === //
+
+.trust {
+  @include centering-cnt;
+  flex-direction: column;
+  font-size: 1rem;
+  align-items: center;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: $break-large) {
+    display: none;
+  }
+
+  &__heading {
+    @include heading;
+  }
+
+  &__cnt {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__img {
+    border: 1px solid $main-medium-color;
+    width: 25%;
+  }
+}
+
+// === FOOTER === //
+
+.footer {
+  @include centering-cnt;
+  flex-direction: column;
+  font-size: 1rem;
+  color: $footer-text-color;
+
+  &__main {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $main-medium-color;
+    height: 60px;
+    width: 100%;
+
+    @media screen and (max-width: $break-large) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: $break-medium) {
+      flex-direction: column;
+      height: auto;
+      width: 95%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__angular {
+    font-size: 1em;
+    font-weight: 700;
+    color: $main-dark-color;
+    margin-top: 25px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    font-size: 0.875em;
+
+    @media screen and (max-width: $break-medium) {
+      flex-direction: column;
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    margin-left: 55px;
+    cursor: pointer;
+
+    &:hover {
+      color: $main-dark-color;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: $break-large) {
+      margin-left: 2vw;
+    }
+
+    @media screen and (max-width: $break-medium) {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+
+  &__icons {
+    height: 22px;
+  }
+
+  &__icon {
+    margin-left: 14px;
+    @media screen and (max-width: $break-medium) {
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    font-size: 0.725em;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
   }
 }
