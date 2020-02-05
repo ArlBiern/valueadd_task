@@ -1,5 +1,6 @@
 // === VARIABLES === //
-$mainFont: 'Roboto', sans-serif;
+$mainFont: 'Roboto',
+sans-serif;
 $main-dark-color: #152743;
 $main-medium-color: #d4dbe9;
 $main-light-color: #fff;
@@ -23,6 +24,21 @@ $break-small: 360px;
   font-size: 1em;
   border-radius: 5px;
   border-style: none;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: $checkbox-color;
+    outline: none;
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 @mixin centering-cnt {
@@ -103,7 +119,7 @@ body {
 
     &__input {
       @media screen and (max-width: $break-large) {
-        &:checked + .nav__label {
+        &:checked+.nav__label {
           .nav__span {
             opacity: 0;
             top: 50%;
@@ -120,7 +136,7 @@ body {
           }
         }
 
-        &:checked ~ .nav__list {
+        &:checked~.nav__list {
           display: block;
 
           @media screen and (max-width: $break-medium) {
@@ -135,7 +151,7 @@ body {
           }
         }
 
-        &:checked ~ .nav__login {
+        &:checked~.nav__login {
           display: block;
         }
       }
@@ -207,6 +223,11 @@ body {
       @media screen and (max-width: $break-large) {
         margin-left: 0.25vw;
       }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: inherit;
     }
 
     &__login {
@@ -432,7 +453,7 @@ body {
   &__permission-input {
     display: none;
 
-    &:checked ~ label > span:before {
+    &:checked~label>span:before {
       content: '';
       display: inline-block;
       width: 10px;
@@ -532,7 +553,10 @@ body {
     font-size: 1em;
     font-weight: 700;
     color: $main-dark-color;
-    margin-top: 25px;
+
+    @media screen and (max-width: $break-medium) {
+      margin-top: 25px;
+    }
   }
 
   &__list {
@@ -551,10 +575,6 @@ body {
     margin-left: 55px;
     cursor: pointer;
 
-    &:hover {
-      color: $main-dark-color;
-    }
-
     &:first-child {
       margin-left: 0;
     }
@@ -569,17 +589,31 @@ body {
     }
   }
 
+  &__link {
+    text-decoration: none;
+    color: $footer-text-color;
+
+    &:hover {
+      color: $main-dark-color;
+    }
+  }
+
   &__icons {
     height: 22px;
   }
 
   &__icon {
     margin-left: 14px;
+
     @media screen and (max-width: $break-medium) {
       &:first-child {
         margin-left: 0;
       }
     }
+  }
+
+  &__link-social {
+    text-decoration: none;
   }
 
   &__copyright {
