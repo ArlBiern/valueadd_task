@@ -52,44 +52,112 @@
       </section>
     </header>
     <section class="passion">
-      <h2>Our Passion</h2>
-      <div class="passsion__content">
-        <div class="passion_info">
+      <h2 class="passion__heading">Our Passion</h2>
+      <div class="passion__content">
+        <div class="passion__info">
           <img
             src="./img/icon_development.png"
             alt="Icon which presents program user interface"
-            classs="passsion_img"
+            class="passion__img"
           />
-          <h4 class="passsion__title">Development</h4>
-          <p class="passsion__details">
+          <h4 class="passion__title">Development</h4>
+          <p class="passion__details">
             Living in today's metropolitan world of cellular phones, mobile
             computers
           </p>
         </div>
-        <div class="passion_info">
+        <div class="passion__info">
           <img
             src="./img/icon_audyt.png"
             alt="Icon which presents program user interface"
-            classs="passsion_img"
+            class="passion__img"
           />
-          <h4 class="passsion__title">Audyt</h4>
-          <p class="passsion__details">
+          <h4 class="passion__title">Audit</h4>
+          <p class="passion__details">
             It is a good idea to think of your PC as an office. It stores files,
             programs, pictures.
           </p>
         </div>
-        <div class="passion_info">
+        <div class="passion__info">
           <img
             src="./img/icon_consulting.png"
             alt="Icon which presents program user interface"
-            classs="passsion_img"
+            class="passion__img"
           />
-          <h4 class="passsion__title">Consulting</h4>
-          <p class="passsion__details">
+          <h4 class="passion__title">Consulting</h4>
+          <p class="passion__details">
             Last month, my wife, Ann Doe, took me to Las Vegas because she had
             to go.
           </p>
         </div>
+      </div>
+    </section>
+    <section class="contact">
+      <h2 class="contact__heading">Write Us</h2>
+      <div class="contact__cnt">
+        <h4 class="contact__question">Potrzebujesz pomocy z projektem?</h4>
+        <p class="contact__info">
+          Napisz do nas, jesteśmy profesjonalistami w temacie programowania,
+          consultingu i audytu IT
+        </p>
+        <form action="#" class="contact__form">
+          <label for="fullname" class="contact__label">Imię i nazwisko</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Jak Kowalski"
+            class="contact__input"
+          />
+          <label for="email" class="contact__label">Adres e-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="jan.kowalski@mojafirma.pl"
+            class="contact__input"
+          />
+          <label for="phone" class="contact__label">Numer telefonu</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="+[0-9]{2} [0-9]{3} [0-9]{3} [0-9]{3}"
+            placeholder="+48 285 285 687"
+            class="contact__input"
+          />
+          <label for="subject" class="contact__label">Temat</label>
+          <select name="subject" id="subject" class="contact__input">
+            <option value="consulting" selected>Consulting</option>
+            <option value="consulting">Development</option>
+            <option value="consulting">Audit</option>
+            <option value="consulting">Other</option>
+          </select>
+          <label for="message" class="contact__label">Treść</label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Tutaj wpisz treść wiadomości"
+            rows="5"
+            class="contact__input"
+          ></textarea>
+          <div class="contact__permission">
+            <input
+              type="checkbox"
+              id="permission"
+              name="permission"
+              class="contact__permission-input"
+            />
+            <label for="permission" class="contact__permission-label">
+              <span class="contact__permission-span"></span>
+              <p class="contact__permission-text">
+                Wysyłając wiadomość zgadzasz się na przekazanie nam Twoich
+                danych osobowych
+              </p>
+            </label>
+          </div>
+          <input type="submit" value="Wyślij" class="contact__submit">
+        </form>
       </div>
     </section>
   </body>
